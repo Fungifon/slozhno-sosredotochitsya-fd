@@ -1,12 +1,11 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 :root.theme-dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --text-clr: var(--clr-rose-2, #f1b2ce);
+  --main-clr: var(--clr-violet-1, #db00ff);
+  --support-clr: var(--clr-violet-2, #ff0070);
+  --shadow-clr: var(--clr-violet-3, #ff007040);
+  --emphasis-clr: var(--clr-violet-2, #ff0070);
+  --mark-clr: var(--clr-dark-1, #000028);
+  --bg-clr-default: var(--clr-dark-1, #000028);
+  --bg-img-default: url("../images/cover-image-dark.png");
+  --rec-indicator-show: visible;
 }

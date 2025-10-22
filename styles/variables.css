@@ -1,4 +1,22 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+:root {
+  --clr-rose-1: #fff1f7;
+  --clr-rose-2: #f1b2ce;
+  --clr-rose-3: #ffc2e6;
+  --clr-rose-4: #ff8dcb;
+  --clr-violet-1: #db00ff;
+  --clr-violet-2: #ff0070;
+  --clr-violet-3: #ff007040;
+  --clr-dark-1: #000028;
+  --clr-dark-2: #353430;
+  --clr-dark-3: #35343040;
+  --text-clr: var(--clr-rose-2, #f1b2ce);
+  --main-clr: var(--clr-violet-1, #db00ff);
+  --support-clr: var(--clr-violet-2, #ff0070);
+  --shadow-clr: var(--clr-violet-3, #ff007040);
+  --emphasis-clr: var(--clr-violet-2, #ff0070);
+  --mark-clr: var(--clr-dark-1, #000028);
+  --base-font: "IBM Plex mono", monospace;
+  --bg-img-default: url("../images/cover-image-dark.png");
+  --bg-clr-default: var(--clr-dark-1, #000028);
+  --rec-indicator-show: visible;
+}

@@ -1,5 +1,310 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+/* UTILITIES */
+.shade-effect {
+  text-shadow: 2px 2px 0 var(--emphasis-clr, #ff0070);
+}
+
+.border-area {
+  position: relative;
+}
+
+.border-area::before,
+.border-area::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.border-area::before {
+  border-inline-end: 1px solid var(--support-clr, #ff0070);
+  border-block-start: 1px solid var(--support-clr, #ff0070);
+  inset-inline-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  inset-block-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+}
+
+.border-area::after {
+  border-inline-start: 1px solid var(--support-clr, #ff0070);
+  border-block-end: 1px solid var(--support-clr, #ff0070);
+  inset-inline-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  inset-block-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+}
+
+.indicator-rec {
+  position: absolute;
+  z-index: -1;
+  visibility: var(--rec-indicator-show, visible);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  inset-inline-end: 20px;
+  inset-block-start: 10px;
+}
+
+.indicator-rec::before {
+  content: "REC";
+  color: var(--emphasis-clr, #ff0070);
+  line-height: 24px;
+}
+
+.indicator-rec::after {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  box-shadow: 0 0 2px 2px var(--emphasis-clr, #ff0070);
+  background: var(--emphasis-clr, #ff0070);
+  inline-size: 9px;
+  block-size: 9px;
+}
+
+/* LAYOUT */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  color: var(--text-clr, #f1b2ce);
+  font-family: var(--base-font, "IBM Plex mono", monospace);
+  font-size: 18px;
+  line-height: 23.4px;
+  background-color: var(--bg-clr-default, #000028);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.front-cover {
+  display: grid;
+  padding: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  min-block-size: 100vh;
+}
+
+.page-header {
+  z-index: 1;
+  align-items: start;
+  background-image: var(
+    --bg-img-default,
+    url("../images/cover-image.png")
+  );
+}
+
+.content-main {
+  display: grid;
+  gap: 50px;
+  padding: 40px 10px;
+}
+
+.content-section {
+  display: grid;
+  gap: 20px;
+}
+
+
+.page-footer {
+  place-items: center;
+}
+
+/* COMPONENTS */
+
+.link-style {
+  text-decoration: none;
+}
+
+.link-style:hover {
+  text-decoration: underline;
+}
+
+.link-style:focus {
+  outline: 0;
+}
+
+.link-style:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.major-title {
+  color: var(--main-clr, #db00ff);
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  text-shadow: 4px 4px 0 var(--emphasis-clr, #ff0070);
+}
+
+.section-title {
+  color: var(--support-clr, #ff0070);
+  font-weight: 700;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.title-mark {
+  color: var(--mark-clr, #000028);
+  background: var(--emphasis-clr, #ff0070);
+}
+
+.content-section--media {
+  gap: 10px;
+}
+
+.content-section--guide__title {
+  margin-block-end: 20px;
+}
+
+.article-list {
+  display: grid;
+  gap: 20px;
+}
+
+.text-article {
+  display: grid;
+  gap: 10px;
+}
+
+.media-list {
+  display: grid;
+  gap: 10px;
+}
+
+.media-list__image {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  margin-block: 65px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header__theme-menu-button {
+  border: 1px solid transparent;
+  padding: 2px 12px;
+  color: var(--support-clr, #ff0070);
+  line-height: 18px;
+  text-transform: lowercase;
+  background: transparent;
+  cursor: pointer;
+}
+
+.header__theme-menu-button_type_active {
+  border-color: currentColor;
+  cursor: default;
+  pointer-events: none;
+}
+
+.header__theme-menu-button:hover {
+  border-color: var(--shadow-clr, #ff007040);
+}
+
+.header__theme-menu-button:focus {
+  outline: 0;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end-color: currentColor;
+}
+
+.page-header__tagline {
+  justify-self: end;
+  inline-size: clamp(364px, calc(100% / 2 - 10px), 491px);
+  margin-block: 55px;
+  color: var(--mark-clr, #000028);
+  font-weight: 700;
+  font-size: inherit;
+  line-height: inherit;
+  background: var(--emphasis-clr, #ff0070);
+}
+
+/* MEDIA QUERIES */
+
+@media (width >= 768px) {
+  .indicator-rec {
+    inset-inline-end: 28px;
+    inset-block-start: 20px;
+  }
+
+  .major-title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .content-section {
+    grid-template-columns: clamp(236px, calc(100% / 3.25), 315px) 1fr;
+  }
+
+  .content-section--causes__article-list {
+    grid-column-start: span 2;
+  }
+
+  .content-section--media {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .content-section--guide__article-list {
+    grid-column-start: 2;
+  }
+
+  .media-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .media-list__item:first-child,
+  .media-list__item:last-child {
+    grid-column-start: span 2;
+  }
+
+  .media-list__item:nth-child(2),
+  .media-list__item:nth-child(3) {
+    grid-row-start: span 2;
+  }
+
+  .page-header {
+    padding-inline-start: 0;
+  }
+
+  .page-header__theme-switcher {
+    margin-block-start: 170px;
+    margin-block-end: 70px;
+  }
+
+  .page-header__title {
+    justify-self: end;
+    inline-size: clamp(364px, calc(100% / 2 - 10px), 491px);
+  }
+
+  .content-main {
+    gap: 80px;
+    padding: 60px 20px;
+  }
+}
+
+@media (width >= 1024px) {
+  .major-title {
+    text-shadow: 4px 4px 0 var(--clr-violet-2, #ff0070);
+  }
+
+  .content-section {
+    column-gap: 30px;
+  }
+
+  .content-section--causes__article-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .page-header__theme-switcher {
+    justify-self: center;
+    margin-inline-start: 20px;
+    margin-block-start: 0;
+    margin-block-end: 215px;
+  }
+
+  .page-header__theme-switcher-list {
+    flex-direction: row;
+  }
 }
