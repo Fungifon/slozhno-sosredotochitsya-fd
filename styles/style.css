@@ -73,7 +73,7 @@
 .front-cover {
   display: grid;
   padding: clamp(10px, 0.0286rem + 2.5445vw, 20px);
-  height: 100vh;     
+  height: 100vh;
   min-height: 668px;
 }
 
@@ -84,9 +84,9 @@
     --bg-img-default,
     url("../images/cover-image.png")
   );
-  background-size: cover;       
-  background-repeat: no-repeat;  
-  background-position: center;    
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   background-attachment: fixed;
 }
 
