@@ -68,6 +68,10 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  background-image: var(
+    --bg-img-default,
+    url("../images/cover-image.png")
+  );
 }
 
 .front-cover {
@@ -80,10 +84,6 @@
 .page-header {
   z-index: 1;
   align-items: start;
-  background-image: var(
-    --bg-img-default,
-    url("../images/cover-image.png")
-  );
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -113,7 +113,7 @@
 }
 
 .link-style:hover {
-  text-decoration: underline;
+  border-bottom: 1px solid currentColor;
 }
 
 .link-style:focus {
@@ -134,7 +134,7 @@
 
 .section-title {
   color: var(--support-clr, #ff0070);
-  font-weight: 700;
+  font-weight: 400;
   font-size: inherit;
   line-height: inherit;
 }
@@ -196,11 +196,11 @@
   cursor: pointer;
 }
 
-.header__theme-menu-button_type_active {
+.header__theme-menu-button_active {
   border-color: currentColor;
   cursor: default;
   pointer-events: none;
-}
+  }
 
 .header__theme-menu-button:hover {
   border-color: var(--shadow-clr, #ff007040);
