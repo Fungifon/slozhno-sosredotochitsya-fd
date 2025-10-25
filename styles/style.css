@@ -63,6 +63,7 @@
   color: var(--text-clr, #f1b2ce);
   font-family: var(--base-font, "IBM Plex mono", monospace);
   font-size: 18px;
+  font-weight: 400;
   line-height: 23.4px;
   background-color: var(--bg-clr-default, #000028);
   background-position: center;
@@ -134,7 +135,7 @@
 
 .section-title {
   color: var(--support-clr, #ff0070);
-  font-weight: 400;
+  font-weight: 700;
   font-size: inherit;
   line-height: inherit;
 }
@@ -221,6 +222,10 @@
   font-size: inherit;
   line-height: inherit;
   background: var(--emphasis-clr, #ff0070);
+}
+
+.title-list{
+  font-weight: 400;
 }
 
 /* MEDIA QUERIES */
